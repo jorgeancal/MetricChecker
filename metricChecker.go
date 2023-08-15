@@ -39,7 +39,7 @@ func main() {
 		name := element.Name
 		query := element.Query
 		if strings.Contains(query, *metric) {
-			fmt.Fprintf(os.Stderr, "%s is being use in %s \n", *metric, *name)
+			fmt.Fprintf(os.Stderr, "%s is being used in %s \n", *metric, *name)
 		}
 	}
 	fmt.Println("Retrieving Dashboards")
@@ -58,7 +58,7 @@ func main() {
 		resp3, _, _ := apidash.GetDashboard(ctx, *element.Id)
 		responseContent, _ := json.MarshalIndent(resp3, "", "")
 		if strings.Contains(string(responseContent), *metric) {
-			fmt.Fprintf(os.Stderr, "%s is being use in %s \n", *metric, *element.Title)
+			fmt.Fprintf(os.Stderr, "%s is being used in %s \n", *metric, *element.Title)
 		}
 	}
 }
